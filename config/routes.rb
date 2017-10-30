@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/' =>'text#input'
-
+  get 'messages' => 'messages#new'
+  resources :messages
+  root 'messages#new'
 end

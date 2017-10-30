@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# jubilant-meme
->>>>>>> b14c8a6d419ba8339135703e6f61c52c6ada430a
