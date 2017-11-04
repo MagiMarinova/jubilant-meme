@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/' => 'messages#new'
-  post '/' => 'messages#create'
-  get '/show/:id'=> 'messages#show'
+  get 'messages' => 'messages#new'
+  resources :messages
+  root 'messages#new'
 end

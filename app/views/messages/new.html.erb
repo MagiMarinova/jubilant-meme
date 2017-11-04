@@ -1,5 +1,5 @@
 <%= form_with scope: :messages, local: true do |form| %>
 
-  <%= text_area :post, :body, cols: 50, rows: 20 %>
+  <%= form.text_area :text %>
   <%= submit_tag "submit", :name => nil, :id => "submit"%>
 <% end %>
