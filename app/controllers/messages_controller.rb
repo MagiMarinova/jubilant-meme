@@ -1,4 +1,9 @@
+require 'json'
+
 class MessagesController < ApplicationController
+
+  protect_from_forgery except: :api
+
   def new
   end
   def create
@@ -8,4 +13,15 @@ class MessagesController < ApplicationController
   def show
 		@m= Message.find(params[:id])
   end
+
+  def api
+    json = params.permit(:message)
+		@m = Message.new
+		@m.text = json
+		@m.save
+		url = "https://jubilant-meme.herokuapp.com/messages/" + @m.id.to_s
+		url_json = {:url => url}
+    render json: url_json.to_json
+  end
+
 end
