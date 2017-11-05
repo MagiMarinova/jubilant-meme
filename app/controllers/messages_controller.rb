@@ -9,6 +9,8 @@ class MessagesController < ApplicationController
   def create
 		@m=Message.new(params.require(:messages).permit(:text))
     @m.save
+url = "https://jubilant-meme.herokuapp.com/messages/" + @message.id.to_s
+render plain: url
   end
   def show
 		@m= Message.find(params[:id])
