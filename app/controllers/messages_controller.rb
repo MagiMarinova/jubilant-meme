@@ -17,8 +17,9 @@ class MessagesController < ApplicationController
   def api
     json = params.permit(:message)
 		@m = Message.new
-		@m.text = json
+		@m.text = json.to_h[:message]
 		@m.save
+    puts @m.text
 		url = "https://jubilant-meme.herokuapp.com/messages/" + @m.id.to_s
 		url_json = {:url => url}
     render json: url_json.to_json

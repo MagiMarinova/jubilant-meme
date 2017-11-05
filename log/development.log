@@ -3761,3 +3761,72 @@ Processing by MessagesController#api as */*
 Completed 200 OK in 209ms (Views: 0.2ms | ActiveRecord: 167.2ms)
 
 
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:38:15 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.8ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:38:17.189213"], ["updated_at", "2017-11-05 21:38:17.189213"]]
+  [1m[35m (59.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 158ms (Views: 0.4ms | ActiveRecord: 70.7ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:39:48 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:39:58.962876"], ["updated_at", "2017-11-05 21:39:58.962876"]]
+  [1m[35m (167.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 212ms (Views: 0.4ms | ActiveRecord: 170.2ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:42:12 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:42:12.390815"], ["updated_at", "2017-11-05 21:42:12.390815"]]
+  [1m[35m (49.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 108ms (Views: 0.3ms | ActiveRecord: 51.9ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:45:19 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.8ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:45:20.015743"], ["updated_at", "2017-11-05 21:45:20.015743"]]
+  [1m[35m (69.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 148ms (Views: 4.6ms | ActiveRecord: 115.8ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:47:06 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:47:06.158279"], ["updated_at", "2017-11-05 21:47:06.158279"]]
+  [1m[35m (68.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 581ms (ActiveRecord: 80.6ms)
+
+
+  
+NameError (undefined local variable or method `m' for #<MessagesController:0x00562a78448100>
+Did you mean?  @m):
+  
+app/controllers/messages_controller.rb:22:in `api'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:47:32 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:47:32.814534"], ["updated_at", "2017-11-05 21:47:32.814534"]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 141ms (Views: 0.6ms | ActiveRecord: 100.0ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-05 23:49:22 +0200
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 21:49:22.593483"], ["updated_at", "2017-11-05 21:49:22.593483"]]
+  [1m[35m (169.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 219ms (Views: 0.3ms | ActiveRecord: 172.0ms)
+
+
