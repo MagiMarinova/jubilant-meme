@@ -3830,3 +3830,90 @@ Processing by MessagesController#api as */*
 Completed 200 OK in 219ms (Views: 0.3ms | ActiveRecord: 172.0ms)
 
 
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:01:42 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#api as */*
+  Parameters: {"message"=>"the value of the message"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.6ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the value of the message"], ["created_at", "2017-11-05 23:01:44.358510"], ["updated_at", "2017-11-05 23:01:44.358510"]]
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 216ms (Views: 0.5ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-11-06 01:14:52 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:15:42 +0200
+Processing by MessagesController#api as */*
+Completed 500 Internal Server Error in 966ms
+
+
+  
+NameError (undefined local variable or method `message_params' for #<MessagesController:0x0055e595fd3178>
+Did you mean?  message_path):
+  
+app/controllers/messages_controller.rb:35:in `api'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:17:42 +0200
+Processing by MessagesController#api as */*
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 5.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'content' for Message.):
+  
+app/controllers/messages_controller.rb:35:in `api'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:19:15 +0200
+Processing by MessagesController#api as */*
+Unpermitted parameter: :content
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "messages" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-05 23:19:15.430316"], ["updated_at", "2017-11-05 23:19:15.430316"]]
+  [1m[35m (147.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 331ms (Views: 0.2ms | ActiveRecord: 155.6ms)
+
+
+Started GET "/messages/16" for 127.0.0.1 at 2017-11-06 01:19:53 +0200
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1290ms (Views: 1209.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:26:18 +0200
+Processing by MessagesController#api as */*
+Unpermitted parameter: :content
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-05 23:26:18.730352"], ["updated_at", "2017-11-05 23:26:18.730352"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 77ms (Views: 4.7ms | ActiveRecord: 19.7ms)
+
+
