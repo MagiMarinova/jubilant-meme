@@ -31,7 +31,7 @@ render plain: url
 
     if request.headers["Content-Type"] == 'text/xml'
       message_hash = Hash.from_xml(request.body.read)
-      params[:message] = {"content" => message_hash["message"]}
+      params[:message] = {"text" => message_hash["message"]}
       @m = Message.create(params.require(:message).permit(:text))
       url = {"url" => messages_url + "/" + @m.id.to_s}
       render xml: url.to_xml

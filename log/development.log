@@ -4016,3 +4016,20 @@ Unpermitted parameter: :content
 Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 50.3ms)
 
 
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 01:55:33 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-05 23:55:34.076775"], ["updated_at", "2017-11-05 23:55:34.076775"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 78ms (Views: 0.2ms | ActiveRecord: 31.8ms)
+
+
+Started GET "/messages/26" for 127.0.0.1 at 2017-11-06 01:55:39 +0200
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 102ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
