@@ -34,7 +34,7 @@ render plain: url
       params[:message] = {"text" => message_hash["message"]}
       @m = Message.create(params.require(:message).permit(:text))
       url = {"url" => messages_url + "/" + @m.id.to_s}
-      render xml: url.to_xml
+      render :api
     end
   end
 

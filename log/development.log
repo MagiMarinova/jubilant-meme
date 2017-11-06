@@ -4033,3 +4033,84 @@ Processing by MessagesController#show as HTML
 Completed 200 OK in 102ms (Views: 91.6ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:09:36 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#api as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:09:37.085275"], ["updated_at", "2017-11-06 01:09:37.085275"]]
+  [1m[35m (47.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 221ms (Views: 2.7ms | ActiveRecord: 50.2ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:09:58 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:09:58.753709"], ["updated_at", "2017-11-06 01:09:58.753709"]]
+  [1m[35m (61.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 63.1ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:17:51 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:17:51.256185"], ["updated_at", "2017-11-06 01:17:51.256185"]]
+  [1m[35m (88.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 114ms (Views: 0.2ms | ActiveRecord: 93.4ms)
+
+
+Started GET "/messages/29" for 127.0.0.1 at 2017-11-06 03:18:09 +0200
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 600ms (Views: 580.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:20:12 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:20:12.818671"], ["updated_at", "2017-11-06 01:20:12.818671"]]
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering messages/api.xml.builder
+  Rendered messages/api.xml.builder (18.9ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 25.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: xml.url "http://jubilant-meme.herokuapp.com/messages/#{@message.id}"
+  
+app/views/messages/api.xml.builder:1:in `_app_views_messages_api_xml_builder__1613610760464852136_47195647849700'
+app/controllers/messages_controller.rb:37:in `api'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:22:16 +0200
+  
+SyntaxError (/home/magi_marinova/TP.17.18/hw2/app/controllers/messages_controller.rb:38: syntax error, unexpected keyword_end):
+  
+app/controllers/messages_controller.rb:38: syntax error, unexpected keyword_end
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:22:52 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:22:52.801935"], ["updated_at", "2017-11-06 01:22:52.801935"]]
+  [1m[35m (103.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering messages/api.xml.builder
+  Rendered messages/api.xml.builder (13.9ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 107.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: xml.url "http://jubilant-meme.herokuapp.com/messages/#{@message.id}"
+  
+app/views/messages/api.xml.builder:1:in `_app_views_messages_api_xml_builder__1613610760464852136_70083162511860'
+app/controllers/messages_controller.rb:37:in `api'
+Started POST "/messages/api" for 127.0.0.1 at 2017-11-06 03:23:28 +0200
+Processing by MessagesController#api as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "the message value"], ["created_at", "2017-11-06 01:23:28.323340"], ["updated_at", "2017-11-06 01:23:28.323340"]]
+  [1m[35m (20.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering messages/api.xml.builder
+  Rendered messages/api.xml.builder (0.5ms)
+Completed 200 OK in 63ms (Views: 17.5ms | ActiveRecord: 24.4ms)
+
+
